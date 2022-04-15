@@ -2,7 +2,7 @@
 name = "note-taking"
 version = "0.1.0"
 description = ""
-authors = ["Carson Weeks <CarsonWeeks@mail.com>"]
+authors = ["Carson Weeks <mail@carsonweeks.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
