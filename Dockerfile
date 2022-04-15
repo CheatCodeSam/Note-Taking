@@ -22,10 +22,10 @@ COPY ./frontend/package.json .
 RUN npm install
 COPY ./frontend .
 RUN npm run build
-RUN rm -rf ./node_modules
 WORKDIR /usr/src/app
 
 COPY . .
 
 RUN python manage.py collectstatic
-CMD gunicorn --bind=0.0.0.0:$PORT devproject.wsgi
+EXPOSE 8000
+CMD gunicorn --bind=0.0.0.0:8000 devproject.wsgi
