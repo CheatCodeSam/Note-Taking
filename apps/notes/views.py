@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, "apps/notes/index.html")
+    return render(request, "notes/index.html")
