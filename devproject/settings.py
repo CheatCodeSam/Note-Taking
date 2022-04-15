@@ -129,7 +129,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / "frontend" / "build"
 
-DJANGO_VITE_DEV_MODE = DEBUG
+DJANGO_VITE_DEV_MODE = False
 
 STATIC_ROOT = BASE_DIR / "collectedstatic"
 
