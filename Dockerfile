@@ -16,15 +16,13 @@ COPY pyproject.toml .
 RUN poetry config virtualenvs.create false
 RUN poetry install
 
+COPY . .
+
 # Install Frontend Dependencies, then Build Frontend.
 WORKDIR /usr/src/app/frontend
-COPY ./frontend/package.json .
 RUN npm install
-COPY ./frontend .
 RUN npm run build
 WORKDIR /usr/src/app
-
-COPY . .
 
 RUN python manage.py collectstatic
 EXPOSE 8000
