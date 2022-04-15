@@ -2,6 +2,10 @@ FROM nikolaik/python-nodejs:python3.10-nodejs17-slim
 
 WORKDIR /usr/src/app
 
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV DJ_DEBUG 0
+
 # Install Postgres Dependencies
 RUN apt-get update
 RUN apt-get -y upgrade

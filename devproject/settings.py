@@ -22,10 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-7%q3pibl5mjvsyf6+$@2g$xn#*dm305*qp_+adz!*ps-+hoy^0"
+SECRET_KEY = os.getenv(
+    "DJ_SECRET_KEY",
+    "django-insecure-7%q3pibl5mjvsyf6+$@2g$xn#*dm305*qp_+adz!*ps-+hoy^0",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJ_DEBUG", "True").lower() in ("true", "1", "t")
 
 ALLOWED_HOSTS = ["note-taking-cse.herokuapp.com", "localhost"]
 
@@ -129,7 +132,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / "frontend" / "build"
 
-DJANGO_VITE_DEV_MODE = False
+DJANGO_VITE_DEV_MODE = DEBUG
 
 STATIC_ROOT = BASE_DIR / "collectedstatic"
 
