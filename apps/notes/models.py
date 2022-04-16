@@ -6,7 +6,6 @@ class Note(models.Model):
     id = ShortUUIDField(
         length=16,
         max_length=40,
-        prefix="id_",
         primary_key=True,
     )
     title = models.CharField(max_length=30, null=False, blank=True)

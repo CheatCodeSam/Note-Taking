@@ -1,3 +1,7 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+@admin.register(models.Note)
+class NoteAdmin(admin.ModelAdmin):
+    readonly_fields = ("id",)
