@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_browser_reload",
     "django_vite",
     "apps.notes",
 ]
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -82,13 +84,13 @@ WSGI_APPLICATION = "devproject.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': os.getenv("DATABASETYPE", 'django.db.backends.sqlite3'),
-        'NAME': os.getenv("PGDATABASE", BASE_DIR / 'db.sqlite3'),
-        'USER': os.getenv("PGUSER", ""),
-        'PASSWORD': os.getenv("PGPASSWORD", ""),
-        'HOST': os.getenv("PGHOST", ""),
-        'PORT': os.getenv("PGPORT", ""),
+    "default": {
+        "ENGINE": os.getenv("DATABASETYPE", "django.db.backends.sqlite3"),
+        "NAME": os.getenv("PGDATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.getenv("PGUSER", ""),
+        "PASSWORD": os.getenv("PGPASSWORD", ""),
+        "HOST": os.getenv("PGHOST", ""),
+        "PORT": os.getenv("PGPORT", ""),
     }
 }
 
