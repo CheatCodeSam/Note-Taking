@@ -18,7 +18,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         mykey: "./src/main.js",
-        favicon: "./publicDir/favicon.ico",
       },
     },
   },
