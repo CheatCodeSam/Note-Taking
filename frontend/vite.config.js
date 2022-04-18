@@ -11,12 +11,14 @@ export default defineConfig({
       disableGlobbing: false,
     },
   },
+  publicDir: "publicDir",
   build: {
     manifest: true,
     outDir: "./build",
     rollupOptions: {
       input: {
         mykey: "./src/main.js",
+        favicon: "./publicDir/favicon.ico",
       },
     },
   },
