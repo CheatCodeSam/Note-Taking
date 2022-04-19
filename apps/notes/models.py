@@ -14,5 +14,10 @@ class Note(models.Model):
         blank=True,
     )
 
+    comment = models.TextField(
+        null=True,
+        blank=True,
+    )
+
     def __str__(self) -> str:
         return self.title
