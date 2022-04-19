@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import re
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -145,3 +146,12 @@ STATIC_ROOT = BASE_DIR / "collectedstatic"
 STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+def immutable_file_test(path, url):
+    # Match filename with 12 hex digits before the extension
+    # e.g. app.db8f2edc0c8a.js
+    return re.match(r"^.+\.[0-9a-f]{8,12}\..+$", url)
+
+
+WHITENOISE_IMMUTABLE_FILE_TEST = immutable_file_test
