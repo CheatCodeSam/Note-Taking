@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DJ_DEBUG 0
+ENV DJ_DEBUG 1
 
 # Install Postgres Dependencies
 RUN apt-get update
