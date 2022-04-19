@@ -143,7 +143,7 @@ DJANGO_VITE_DEV_MODE = DEBUG
 
 STATIC_ROOT = BASE_DIR / "collectedstatic"
 
-STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH, BASE_DIR / "static"]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

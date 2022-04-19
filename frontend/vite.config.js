@@ -11,7 +11,6 @@ export default defineConfig({
       disableGlobbing: false,
     },
   },
-  publicDir: "publicDir",
   build: {
     manifest: true,
     outDir: "./build",
