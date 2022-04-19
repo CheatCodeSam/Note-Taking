@@ -6,6 +6,6 @@ from .models import Note
 from django.shortcuts import render
 
 
-def index(request, shortuuid):
+def detail(request, shortuuid):
     note = get_object_or_404(Note, pk=shortuuid)
-    return render(request, "apps/notes/index.html", {"note": note})
+    return render(request, "apps/notes/detail.html", {"note": note})

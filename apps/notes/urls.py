@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import index
+from .views import detail
 
 urlpatterns = [
-    path("<str:shortuuid>/", index, name="home"),
+    path("<str:shortuuid>/", detail, name="detail"),
 ]
