@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv(
 DEBUG = os.getenv("DJ_DEBUG", "True").lower() in ("true", "1", "t")
 
 ALLOWED_HOSTS = ["note-taking-cse.herokuapp.com", "localhost"]
-
+CSRF_TRUSTED_ORIGINS = ["https://note-taking-cse.herokuapp.com"]
 
 # Application definition
 
