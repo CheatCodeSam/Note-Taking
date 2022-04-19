@@ -1,8 +1,8 @@
-from django.shortcuts import get_object_or_404
-from .models import Note
-from django.views.generic.edit import CreateView
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.views.generic.edit import CreateView
+
+from .models import Note
 
 
 def detail(request, shortuuid):
