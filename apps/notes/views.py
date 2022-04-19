@@ -1,13 +1,15 @@
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
 
 from .models import Note
 
 
-def detail(request, shortuuid):
-    note = get_object_or_404(Note, pk=shortuuid)
-    return render(request, "apps/notes/detail.html", {"note": note})
+class ArticleDetailView(DetailView):
+    model = Note
+    template_name = "apps/notes/detail.html"
+    pk_url_kwarg = "shortuuid"
 
 
 class NoteCreateView(CreateView):
