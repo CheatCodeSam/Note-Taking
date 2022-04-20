@@ -1,4 +1,5 @@
 {% extends "__base.html" %}
+{% load widget_tweaks %}
 
 {% block title %}
 Create a Note
@@ -7,7 +8,16 @@ Create a Note
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Send message">
+    {% for field in form.visible_fields %}
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:' border border-black inline-block ' }}
+        {% for error in field.errors %}
+        <span class="help-block">{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <input type="submit" value="Send message"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
 </form>
 {% endblock %}
