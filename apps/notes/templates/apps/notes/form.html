@@ -11,13 +11,12 @@ Create a Note
     {% for field in form.visible_fields %}
     <div class="form-group">
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:' border border-black inline-block ' }}
+        {{ field|add_class:' input input-bordered w-full max-w-xs ' }}
         {% for error in field.errors %}
         <span class="help-block">{{ error }}</span>
         {% endfor %}
     </div>
     {% endfor %}
-    <input type="submit" value="Create Note"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+    <input type="submit" value="Create Note" class="btn-primary btn">
 </form>
 {% endblock %}
